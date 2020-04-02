@@ -1,0 +1,17 @@
+{
+  "name": "getCareerMaps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wx-server-sdk": "^1.8.2"
+  },
+  "devDependencies": {
+    "jest": "^25.2.6"
+  }
+}
