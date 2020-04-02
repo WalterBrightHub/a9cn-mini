@@ -1,0 +1,14 @@
+{
+  "name": "a9cn-mini",
+  "version": "1.0.0",
+  "description": "使用云开发",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "weui-miniprogram": "^0.2.2"
+  }
+}
