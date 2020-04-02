@@ -1,0 +1,5 @@
+<!--components/request-fail/request-fail.wxml-->
+<view class="fail-block">
+	<image src="./packet.png" class="fail-icon"></image>
+	<view class="fail-text">请求失败</view>
+</view>
