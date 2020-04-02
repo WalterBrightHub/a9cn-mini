@@ -1,0 +1,9 @@
+<!--miniprogram/pages/careerMaps/careerMaps.wxml-->
+
+<view wx:if="{{careerMapsStauts==='pending'}}">
+  <mp-loading wx:if="{{careerMapsLoading}}" />
+</view>
+<view wx:elif="{{careerMapsStauts==='resolve'}}">resolve</view>
+<view wx:else="{{careerMapsStauts==='reject'}}"><request-fail /></view>
+
+<text>生涯地图</text>

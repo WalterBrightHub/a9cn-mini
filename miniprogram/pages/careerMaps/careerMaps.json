@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "request-fail":"../../components/request-fail/request-fail",
+    "mp-loading":"../../miniprogram_npm/weui-miniprogram/loading/loading"
+  },
+  "enablePullDownRefresh": true
+}
