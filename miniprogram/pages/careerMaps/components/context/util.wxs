@@ -1,0 +1,4 @@
+module.exports.shorterName=function(name){
+  return name?name.replace(getRegExp('([DCBAS])(..)-'),'$2'):name
+}
+
