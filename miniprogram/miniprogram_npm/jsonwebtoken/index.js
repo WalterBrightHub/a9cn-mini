@@ -4,7 +4,7 @@ var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexport
 var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1585849462143, function(require, module, exports) {
+__DEFINE__(1585895457239, function(require, module, exports) {
 module.exports = {
   decode: require('./decode'),
   verify: require('./verify'),
@@ -14,8 +14,8 @@ module.exports = {
   TokenExpiredError: require('./lib/TokenExpiredError'),
 };
 
-}, function(modId) {var map = {"./decode":1585849462144,"./verify":1585849462145,"./sign":1585849462151,"./lib/JsonWebTokenError":1585849462146,"./lib/NotBeforeError":1585849462147,"./lib/TokenExpiredError":1585849462148}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585849462144, function(require, module, exports) {
+}, function(modId) {var map = {"./decode":1585895457240,"./verify":1585895457241,"./sign":1585895457247,"./lib/JsonWebTokenError":1585895457242,"./lib/NotBeforeError":1585895457243,"./lib/TokenExpiredError":1585895457244}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1585895457240, function(require, module, exports) {
 var jws = require('jws');
 
 module.exports = function (jwt, options) {
@@ -48,7 +48,7 @@ module.exports = function (jwt, options) {
 };
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585849462145, function(require, module, exports) {
+__DEFINE__(1585895457241, function(require, module, exports) {
 var JsonWebTokenError = require('./lib/JsonWebTokenError');
 var NotBeforeError    = require('./lib/NotBeforeError');
 var TokenExpiredError = require('./lib/TokenExpiredError');
@@ -275,8 +275,8 @@ module.exports = function (jwtString, secretOrPublicKey, options, callback) {
   });
 };
 
-}, function(modId) { var map = {"./lib/JsonWebTokenError":1585849462146,"./lib/NotBeforeError":1585849462147,"./lib/TokenExpiredError":1585849462148,"./decode":1585849462144,"./lib/timespan":1585849462149,"./lib/psSupported":1585849462150}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585849462146, function(require, module, exports) {
+}, function(modId) { var map = {"./lib/JsonWebTokenError":1585895457242,"./lib/NotBeforeError":1585895457243,"./lib/TokenExpiredError":1585895457244,"./decode":1585895457240,"./lib/timespan":1585895457245,"./lib/psSupported":1585895457246}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1585895457242, function(require, module, exports) {
 var JsonWebTokenError = function (message, error) {
   Error.call(this, message);
   if(Error.captureStackTrace) {
@@ -293,7 +293,7 @@ JsonWebTokenError.prototype.constructor = JsonWebTokenError;
 module.exports = JsonWebTokenError;
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585849462147, function(require, module, exports) {
+__DEFINE__(1585895457243, function(require, module, exports) {
 var JsonWebTokenError = require('./JsonWebTokenError');
 
 var NotBeforeError = function (message, date) {
@@ -307,8 +307,8 @@ NotBeforeError.prototype = Object.create(JsonWebTokenError.prototype);
 NotBeforeError.prototype.constructor = NotBeforeError;
 
 module.exports = NotBeforeError;
-}, function(modId) { var map = {"./JsonWebTokenError":1585849462146}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585849462148, function(require, module, exports) {
+}, function(modId) { var map = {"./JsonWebTokenError":1585895457242}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1585895457244, function(require, module, exports) {
 var JsonWebTokenError = require('./JsonWebTokenError');
 
 var TokenExpiredError = function (message, expiredAt) {
@@ -322,8 +322,8 @@ TokenExpiredError.prototype = Object.create(JsonWebTokenError.prototype);
 TokenExpiredError.prototype.constructor = TokenExpiredError;
 
 module.exports = TokenExpiredError;
-}, function(modId) { var map = {"./JsonWebTokenError":1585849462146}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585849462149, function(require, module, exports) {
+}, function(modId) { var map = {"./JsonWebTokenError":1585895457242}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1585895457245, function(require, module, exports) {
 var ms = require('ms');
 
 module.exports = function (time, iat) {
@@ -343,13 +343,13 @@ module.exports = function (time, iat) {
 
 };
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585849462150, function(require, module, exports) {
+__DEFINE__(1585895457246, function(require, module, exports) {
 var semver = require('semver');
 
 module.exports = semver.satisfies(process.version, '^6.12.0 || >=8.0.0');
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585849462151, function(require, module, exports) {
+__DEFINE__(1585895457247, function(require, module, exports) {
 var timespan = require('./lib/timespan');
 var PS_SUPPORTED = require('./lib/psSupported');
 var jws = require('jws');
@@ -557,7 +557,7 @@ module.exports = function (payload, secretOrPrivateKey, options, callback) {
   }
 };
 
-}, function(modId) { var map = {"./lib/timespan":1585849462149,"./lib/psSupported":1585849462150}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1585849462143);
+}, function(modId) { var map = {"./lib/timespan":1585895457245,"./lib/psSupported":1585895457246}; return __REQUIRE__(map[modId], modId); })
+return __REQUIRE__(1585895457239);
 })()
 //# sourceMappingURL=index.js.map
