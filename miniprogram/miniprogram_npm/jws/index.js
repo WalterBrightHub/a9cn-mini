@@ -4,7 +4,7 @@ var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexport
 var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1585895457250, function(require, module, exports) {
+__DEFINE__(1585895457639, function(require, module, exports) {
 /*global exports*/
 var SignStream = require('./lib/sign-stream');
 var VerifyStream = require('./lib/verify-stream');
@@ -28,8 +28,8 @@ exports.createVerify = function createVerify(opts) {
   return new VerifyStream(opts);
 };
 
-}, function(modId) {var map = {"./lib/sign-stream":1585895457251,"./lib/verify-stream":1585895457254}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585895457251, function(require, module, exports) {
+}, function(modId) {var map = {"./lib/sign-stream":1585895457640,"./lib/verify-stream":1585895457643}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1585895457640, function(require, module, exports) {
 /*global module*/
 var Buffer = require('safe-buffer').Buffer;
 var DataStream = require('./data-stream');
@@ -109,8 +109,8 @@ SignStream.sign = jwsSign;
 
 module.exports = SignStream;
 
-}, function(modId) { var map = {"./data-stream":1585895457252,"./tostring":1585895457253}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585895457252, function(require, module, exports) {
+}, function(modId) { var map = {"./data-stream":1585895457641,"./tostring":1585895457642}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1585895457641, function(require, module, exports) {
 /*global module, process*/
 var Buffer = require('safe-buffer').Buffer;
 var Stream = require('stream');
@@ -168,7 +168,7 @@ DataStream.prototype.end = function end(data) {
 module.exports = DataStream;
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585895457253, function(require, module, exports) {
+__DEFINE__(1585895457642, function(require, module, exports) {
 /*global module*/
 var Buffer = require('buffer').Buffer;
 
@@ -181,7 +181,7 @@ module.exports = function toString(obj) {
 };
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1585895457254, function(require, module, exports) {
+__DEFINE__(1585895457643, function(require, module, exports) {
 /*global module*/
 var Buffer = require('safe-buffer').Buffer;
 var DataStream = require('./data-stream');
@@ -303,7 +303,7 @@ VerifyStream.verify = jwsVerify;
 
 module.exports = VerifyStream;
 
-}, function(modId) { var map = {"./data-stream":1585895457252,"./tostring":1585895457253}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1585895457250);
+}, function(modId) { var map = {"./data-stream":1585895457641,"./tostring":1585895457642}; return __REQUIRE__(map[modId], modId); })
+return __REQUIRE__(1585895457639);
 })()
 //# sourceMappingURL=index.js.map
