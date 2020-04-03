@@ -1,16 +1,16 @@
 // miniprogram/pages/careerMaps/careerMaps.js
 
 
-
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    careerMaps: null,
-    careerMapsStauts: 'pending',
+    careerMaps: {},
+    careerMapsStatus: 'pending',
     careerMapsLoading:true
   },
+
 
   onRequestCareerMaps: async function () {
     return wx.cloud.callFunction({
@@ -29,18 +29,18 @@ Page({
         console.log(res.result) // 3
         this.setData({
           careerMaps: res.result,
-          careerMapsStauts: 'resolve',
+          careerMapsStatus: 'resolve',
           careerMapsLoading:false
         })
       })
       .catch(e=>{
         console.error(e)
         this.setData({
-          careerMapsStauts:'reject'
+          careerMapsStatus:'reject'
         })
       })
       .finally(()=>{
-        // wx.stopPullDownRefresh()
+        wx.stopPullDownRefresh()
       })
   },
 
@@ -77,21 +77,28 @@ Page({
    */
   onPullDownRefresh: function () {
     // console.log('pullDown')
-    this.setData({
-      careerMapsStauts:'pending'
-    })
+    // this.setData({
+    //   careerMapsStatus:'pending'
+    // })
     this.onRequestCareerMaps()
       .then(res => {
         console.log(res.result) // 3
         this.setData({
           careerMaps: res.result,
-          careerMapsStauts: 'resolve'
+          careerMapsStatus: 'resolve'
         })
+        wx.showToast({
+          title: '最新',
+          icon: 'success',
+          duration: 1000
+        })
+        //框架bug：iPad测试不加这一句不会收起，执行不到finally
+        wx.stopPullDownRefresh()
       })
       .catch(e=>{
         console.error(e)
         this.setData({
-          careerMapsStauts:'reject'
+          careerMapsStatus:'reject'
         })
       })
       .finally(()=>{

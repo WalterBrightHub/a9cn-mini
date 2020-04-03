@@ -1,9 +1,12 @@
 <!--miniprogram/pages/careerMaps/careerMaps.wxml-->
-
-<view wx:if="{{careerMapsStauts==='pending'}}">
-  <mp-loading wx:if="{{careerMapsLoading}}" />
+<view class="contain {{darkMode?'dark-mode':''}}">
+	<view wx:if="{{careerMapsStatus==='pending'}}">
+	</view>
+	<view wx:elif="{{careerMapsStatus==='reject'}}">
+		<request-fail />
+	</view>
+	<view wx:elif="{{careerMapsStatus==='resolve'}}">
+		<career-maps-context careerMaps="{{careerMaps}}" darkMode="{{darkMode}}" />
+	</view>
 </view>
-<view wx:elif="{{careerMapsStauts==='resolve'}}">resolve</view>
-<view wx:else="{{careerMapsStauts==='reject'}}"><request-fail /></view>
-
-<text>生涯地图</text>
+<!-- <request-fail /> -->

@@ -1,1 +1,8 @@
 /* miniprogram/pages/careerMaps/careerMaps.wxss */
+
+
+
+.contain{
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
