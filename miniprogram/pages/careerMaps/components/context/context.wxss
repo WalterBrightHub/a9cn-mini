@@ -1,0 +1,125 @@
+/* pages/careerMaps/components/context/context.wxss */
+
+
+
+.theme,
+.car-class,
+.map-name {
+  font-weight: bold;
+}
+
+/* color */
+.car-class,
+.map-name {
+  color: #303030;
+}
+
+.place {
+  color: #606060;
+}
+
+.theme-block {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.theme-block+.theme-block {
+  margin-top: 20px;
+}
+
+
+.theme {
+  margin: 0 0 20px 10px;
+  font-size: 18px;
+  color: rgba(255, 0, 84, 0.75);
+}
+
+.map-name,
+.car-class,
+.place {
+  font-size: 1em;
+}
+
+
+.map-name {
+  min-width: 6em;
+
+}
+
+.car-class {
+  text-align: center;
+}
+
+.car-class,
+.place {
+  min-width: 3em;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+
+}
+
+.row+.row {
+  margin-top: 10px;
+}
+
+/* dark mode */
+/* iOS已经支持，安卓还没有 */
+@media (prefers-color-scheme: dark) {
+
+
+  .theme-block {
+    background-color: #121212;
+    min-height: 200px;
+  }
+
+  .car-class,
+  .map-name {
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .place {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .theme {
+    color: #ff6196;
+  }
+}
+
+
+
+/* responsive */
+
+@media(min-width:360px) {
+  .theme-block {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+
+  /* .row{
+    font-size: 13px;
+  } */
+}
+
+@media(min-width:410px) {
+  .row {
+    font-size: 14px;
+  }
+}
+
+@media(min-width:600px) {
+  .theme-block {
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .row {
+    font-size: 16px;
+  }
+}

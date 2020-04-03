@@ -1,0 +1,21 @@
+<!--pages/careerMaps/components/context/context.wxml-->
+
+
+<view class="theme-block " wx:for="{{themes}}" wx:key="item">
+	<view class="theme">{{item}}</view>
+	<view class="map-block">
+		<view class="row">
+			<view class="map-name"></view>
+			<view class="car-class " wx:for="{{['D','C','B','A','S']}}" wx:key="item">{{item}}</view>
+		</view>
+		<view class="row" wx:for="{{careerMaps[item]}}" wx:key="mapName">
+			<view class="map-name">{{item.mapName}}</view>
+			<view class="place " wx:for="{{[item['D'],item['C'],item['B'],item['A'],item['S']]}}" wx:key="item">{{utils.shorterName(item)}}</view>
+		</view>
+
+	</view>
+</view>
+
+
+
+<wxs src="./util.wxs" module="utils" />
