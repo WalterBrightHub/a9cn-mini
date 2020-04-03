@@ -12,6 +12,3 @@ $RECYCLE.BIN/
 
 # Node.js
 node_modules/
-
-# miniprogram_npm
-miniprogram/miniprogram_npm/
