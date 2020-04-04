@@ -1,4 +1,15 @@
 //app.js
+
+import './lib/promise-polyfill/index'
+
+//iOS基础库上的Promise不支持finally，用pollyfill修复，
+//https://www.cnblogs.com/ljybill/p/10097852.html
+
+global.Promise && (Promise=global.Promise)
+
+
+
+
 App({
   onLaunch: function () {
     

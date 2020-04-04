@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "@vant/weapp": "^1.1.0",
-    "miniprogram-computed": "^2.1.1",
-    "weui-miniprogram": "^0.2.2"
+    "miniprogram-computed": "^2.1.1"
   }
 }

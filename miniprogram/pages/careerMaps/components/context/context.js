@@ -18,7 +18,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    careerMaps:{}
+    
   },
 
   computed:{

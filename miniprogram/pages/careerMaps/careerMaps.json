@@ -1,11 +1,9 @@
 {
   "usingComponents": {
     "request-fail": "../../components/request-fail/request-fail",
-    "mp-loading": "../../miniprogram_npm/weui-miniprogram/loading/loading",
     "van-loading": "../../miniprogram_npm/@vant/weapp/loading/index",
     "career-maps-context":"./components/context/context"
   },
-  "enablePullDownRefresh": true,
   
   "navigationBarTitleText": "生涯地图"
 }

@@ -1,12 +1,12 @@
 <!--miniprogram/pages/careerMaps/careerMaps.wxml-->
-<view class="contain {{darkMode?'dark-mode':''}}">
+<view class="contain">
 	<view wx:if="{{careerMapsStatus==='pending'}}">
 	</view>
 	<view wx:elif="{{careerMapsStatus==='reject'}}">
-		<request-fail />
+		<request-fail bind:onRetry="onRetry"/>
 	</view>
 	<view wx:elif="{{careerMapsStatus==='resolve'}}">
-		<career-maps-context careerMaps="{{careerMaps}}" darkMode="{{darkMode}}" />
+		<career-maps-context careerMaps="{{careerMaps}}" />
 	</view>
 </view>
 <!-- <request-fail /> -->
