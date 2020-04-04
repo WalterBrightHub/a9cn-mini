@@ -1,0 +1,11 @@
+<!--miniprogram/pages/carList/carList.wxml-->
+<view class="contain">
+	<view wx:if="{{carListStatus==='pending'}}">
+	</view>
+	<view wx:elif="{{carListStatus==='reject'}}">
+		<request-fail bind:onRetry="onRetry"/>
+	</view>
+	<view wx:elif="{{carListStatus==='resolve'}}">
+		<car-list-context carList="{{carList}}" />
+	</view>
+</view>

@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/careerMaps/careerMaps"
+    "pages/careerMaps/careerMaps",
+    "pages/carList/carList"
   ],
   "window": {
     "backgroundColor": "#f5f7fa",
@@ -12,5 +13,30 @@
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",
-  "resizable":true
+  "resizable": true,
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#ff0054",
+    "backgroundColor": "#f5f7fa",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "活动",
+        "iconPath":"images/fire.png",
+        "selectedIconPath":"images/fire-selected.png"
+      },
+      {
+        "pagePath": "pages/careerMaps/careerMaps",
+        "text": "地图",
+        "iconPath":"images/flag.png",
+        "selectedIconPath":"images/flag-selected.png"
+      },
+      {
+        "pagePath": "pages/carList/carList",
+        "text": "数据",
+        "iconPath":"images/car-list.png",
+        "selectedIconPath":"images/car-list-selected.png"
+      }
+    ]
+  }
 }

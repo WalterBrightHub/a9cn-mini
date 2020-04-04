@@ -1,7 +1,7 @@
 {
-  "name": "a9cn-mini",
+  "name": "getCarList",
   "version": "1.0.0",
-  "description": "使用云开发",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "miniprogram-computed": "^2.1.1"
+    "wx-server-sdk": "~1.8.3"
   }
 }

@@ -1,0 +1,5 @@
+<!--pages/carList/components/context/context.wxml-->
+<view wx:for="{{['D','C','B','A','S']}}">
+  <view data-car-class="{{item}}" bindtap="onSwitchCarClass">{{item}}</view>
+</view>
+<view wx:for="{{carsGroupByClass[selectedCarClass]}}">{{item.fullName}}</view>

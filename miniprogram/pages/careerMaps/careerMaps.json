@@ -1,7 +1,6 @@
 {
   "usingComponents": {
     "request-fail": "../../components/request-fail/request-fail",
-    "van-loading": "../../miniprogram_npm/@vant/weapp/loading/index",
     "career-maps-context":"./components/context/context"
   },
   

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "request-fail": "../../components/request-fail/request-fail",
+    "car-list-context":"./components/context/context"
+  },
+  "navigationBarTitleText": "车辆数据"
+}
