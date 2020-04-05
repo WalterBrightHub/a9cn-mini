@@ -1,8 +1,12 @@
 /* miniprogram/pages/carList/carList.wxss */
 
-@media(min-width:600px){
+.contain{
+  display: block;
+}
+
+/* @media(min-width:600px){
   .contain{
     max-width: 600px;
     margin: 0 auto;
   }
-}
+} */

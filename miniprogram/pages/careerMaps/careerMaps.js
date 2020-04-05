@@ -77,11 +77,12 @@ Page({
 
   },
 
+  firstTapTab: false,
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.firstTapTab = true
   },
 
   /**
@@ -138,6 +139,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  
+  onTabItemTap(item) {
+    // tab 点击时执行
+    if (this.firstTapTab) {
+      this.firstTapTab = false
+    }
+    else{
+      wx.pageScrollTo({
+        complete: (res) => { },
+        scrollTop: 0
+      })
+
+    }
   },
 
 })

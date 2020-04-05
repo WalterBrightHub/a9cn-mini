@@ -5,17 +5,25 @@
   padding:16px;
   background-color: #fff;
   border-radius: 10px;
+  color: #606060;
+  /* min-width: 280px; */
 }
+
 
 .full-name{
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 5px;
+  color: #303030;
 }
 
 .stars-and-rank{
   display: flex;
   align-items: center;
+  margin-bottom: 5px;
+  justify-content: space-between;
 }
+
 
 
 
@@ -25,14 +33,145 @@
   height: 16px;
 }
 
+.star-icon+.star-icon{
+  margin-left: 4px;
+}
+
+.nick-name{
+  color: #909090;
+  font-size: 14px;
+}
+
 .rank{
-  margin-left: auto;
+  /* margin-left: auto; */
   font-size: 15px;
   border-radius: 3px;
-  padding:1px;
+  padding:1px 3px;
   border:1.5px solid #ffc107;
   color: #ffc107;
+  /* border-color: #ff3176;
+  color: #ff3175; */
   font-weight: bold;
+}
+
+.bps{
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.bp{
+  color: #fff;
+  background-color: #303030;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 12px;
+  /* min-width: 24px; */
+  padding: 4px 7px;
+
+  /* color: #606060; */
+  background-color: #23bbfa;
+}
+
+.bp+.bp{
+  margin-left: 5px;
+}
+
+.perf-and-update{
+  display: flex;
+  font-size: 12px;
+}
+
+.perf{
+  flex:1;
+  margin-right: 2%;
+  /* background-color: green; */
+}
+
+.perf-item{
+  display: flex;
+}
+
+.perf-value{
+  margin-left: auto;
+}
+
+.perf-bar{
+  height: 5px;
+  background-color: #05d1dc;
+  border-radius: 2px;
+  margin-bottom: 9px;
+}
+
+.perf-item+.perf-bar{
+  margin-top: 3px;
+}
+
+.update{
+  flex:1;
+  margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+}
+
+.cost-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.cost-item{
+  display: flex;
+  /* margin-bottom: 12px; */
+}
+
+.cost-item+.cost-item{
+  margin-top: 12px;
+}
+
+.cost-value{
+  margin-left: auto;
+}
+
+.part-list{
+  margin-top: auto;
+  display: static;
+  /* margin-bottom: 5px; */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+}
+
+.part-item{
+  /* height: 10px; */
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.part-item+.part-item{
+  margin-top: 6px;
+}
+
+.part-num{
+  font-size: 12px;
+  margin-left: 6px;
+  width: 14px;
+}
+
+
+.part-icon{
+  width: 12px;
+  height: 12px;
+  margin-left: auto;
+  /* position: absolute; */
+  /* left: 0; */
+  /* bottom: 0; */
+  /* display: block; */
+
+  /* display: block; */
+}
+
+.part-icon+.part-icon{
+  margin-left: 2px;
 }
 
 
@@ -40,14 +179,18 @@
 
 
 
-
-
-
-
-
-
-@media(min-width:720px){
-  .car-card{
-    max-width: 360px;
+@media(min-width:400px){
+  .full-name{
+    font-size: 20px;
+  }
+  .rank{
+    font-size: 18px;
+  }
+  .bp,.perf-and-update{
+    font-size: 16px;
+  }
+  .part-icon{
+    width: 16px;
+    height: 16px;
   }
 }

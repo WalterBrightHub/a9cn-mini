@@ -2,7 +2,5 @@
   "usingComponents": {
     "request-fail": "../../components/request-fail/request-fail",
     "career-maps-context":"./components/context/context"
-  },
-  
-  "navigationBarTitleText": "生涯地图"
+  }
 }

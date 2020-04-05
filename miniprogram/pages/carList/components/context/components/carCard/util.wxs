@@ -1,0 +1,39 @@
+//数值转化为宽度百分比
+module.exports.topSpeed=function(value){
+  return (value-200)/3.2
+}
+
+module.exports.acceleration=function(value){
+  return (value-20)/0.8
+}
+
+module.exports.handling=function(value){
+  return value/1.1
+}
+
+module.exports.nitro=function(value){
+  return (value-10)/0.85
+}
+
+//wxs竟然不支持Array(9)这样的构造函数
+module.exports.ArrayC=function(value){
+  var res=[]
+  for(var i=0;i<value;i++) {
+    res.push('')
+  }
+  return res
+}
+
+//数量千分
+module.exports.split3=function(value){
+  var s=value.toString()
+  var res=[]
+  for(var i=0;i<s.length;i++){
+    res.push(s[s.length-i-1])
+    if(i<s.length-1 && (i+1)%3===0){
+      res.push(',')
+    }
+
+  }
+  return res.reverse().join('')
+}

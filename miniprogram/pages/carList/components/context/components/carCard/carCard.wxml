@@ -3,8 +3,82 @@
 	<view class="full-name">{{carData.fullName}}</view>
 	<view class="stars-and-rank">
 		<view class="stars">
-			<image class="star-icon" wx:for="{{starArray}}" wx:key="value" src="./star.png" />
+			<image class="star-icon" wx:for="{{starArray}}" wx:key="item" src="./image/star.png" />
 		</view>
-    <view class="rank">{{carData.rank}}</view>
+		<view class="nick-name">{{carData.nickName}}</view>
+		<view class="rank">{{carData.rank}}</view>
+	</view>
+	<view class="bps">
+		<view class="bp" wx:for="{{starArray}}" wx:key="item" style="flex:{{item}}">{{item}}</view>
+	</view>
+	<view class="perf-and-update">
+		<view class="perf">
+			<view class="perf-item">
+				<view class="perf-name">最大速度</view>
+				<view class="perf-value">{{carData.topSpeed}}</view>
+			</view>
+			<view class="perf-bar" style="width:{{util.topSpeed(carData.topSpeed)}}%" />
+
+			<view class="perf-item">
+				<view class="perf-name">加速</view>
+				<view class="perf-value">{{carData.acceleration}}</view>
+			</view>
+			<view class="perf-bar" style="width:{{util.acceleration(carData.acceleration)}}%" />
+
+			<view class="perf-item">
+				<view class="perf-name">操控</view>
+				<view class="perf-value">{{carData.handling}}</view>
+			</view>
+			<view class="perf-bar" style="width:{{util.handling(carData.handling)}}%" />
+
+			<view class="perf-item">
+				<view class="perf-name">氮气</view>
+				<view class="perf-value">{{carData.nitro}}</view>
+			</view>
+			<view class="perf-bar" style="width:{{util.nitro(carData.nitro)}}%" />
+
+			<view class="perf-item">
+				<view class="perf-name">单喷时间</view>
+				<view class="perf-value">{{carData.nitroDuration}}</view>
+			</view>
+		</view>
+		<view class="update">
+			<view class="cost-list">
+				<view class="cost-item">
+					<view class="cost-name">升级</view>
+					<view class="cost-value">{{util.split3(carData.stageCost)}}</view>
+				</view>
+				<view class="cost-item">
+					<view class="cost-name">零件</view>
+					<view class="cost-value">{{util.split3(carData.partCost)}}</view>
+				</view>
+				<view class="cost-item">
+					<view class="cost-name">MAX</view>
+					<view class="cost-value">{{util.split3(carData.totalCost)}}</view>
+				</view>
+
+			
+			</view>
+
+			<view class="part-list">
+				<view class="part-item">
+					<image class="part-icon" src="./image/part-uncommon.png"></image>
+					<view class="part-num">{{carData.uncommonPart}}</view>
+				</view>
+				<view class="part-item">
+					<image class="part-icon" src="./image/part-rare.png"></image>
+					<view class="part-num">{{carData.rarePart}}</view>
+				</view>
+				<view class="part-item" wx:if="{{carData.epicPart}}">
+					<image class="part-icon"  src="./image/part-epic.png"></image>
+					<view class="part-num">{{carData.epicPart}}</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </view>
+
+
+
+
+<wxs src="./util.wxs" module="util" />

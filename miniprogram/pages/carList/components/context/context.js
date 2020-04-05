@@ -31,9 +31,13 @@ Component({
   methods: {
     onSwitchCarClass(event){
       let selectedCarClass=event.currentTarget.dataset.carClass
-      console.log(selectedCarClass)
+      // console.log(selectedCarClass)
       this.setData({selectedCarClass})
-    }
+      wx.pageScrollTo({
+        complete: (res) => {},
+        scrollTop:0
+      })
+    },
   },
   computed:{
     // carsGroupByClass:data=>({

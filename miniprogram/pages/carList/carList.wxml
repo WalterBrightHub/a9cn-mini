@@ -6,6 +6,6 @@
 		<request-fail bind:onRetry="onRetry"/>
 	</view>
 	<view wx:elif="{{carListStatus==='resolve'}}">
-		<car-list-context carList="{{carList}}" />
+		<car-list-context id="context" carList="{{carList}}" />
 	</view>
 </view>

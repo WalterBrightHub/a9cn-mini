@@ -1,12 +1,14 @@
 // miniprogram/pages/carList/carList.js
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    carListStatus:'pending',
-    carList:[]
+    carListStatus: 'pending',
+    carList: []
   },
 
   requestCarList: async function () {
@@ -16,9 +18,9 @@ Page({
     })
   },
 
-  setCarList(){
+  setCarList() {
     this.setData({
-      carListStatus:'pending',
+      carListStatus: 'pending',
     })
 
     wx.showLoading({
@@ -26,26 +28,26 @@ Page({
     })
 
     this.requestCarList()
-      .then(res=>{
-        console.log(res.result.data)
+      .then(res => {
+        // console.log(res.result.data)
         // return Promise.reject()
         this.setData({
-          carList:res.result.data,
-          carListStatus:'resolve'
+          carList: res.result.data,
+          carListStatus: 'resolve'
         })
-      }).catch(e=>{
+      }).catch(e => {
         console.log(e)
         this.setData({
-          carListStatus:'reject'
+          carListStatus: 'reject'
         })
-      }).finally(()=>{
+      }).finally(() => {
         wx.hideLoading({
-          complete: (res) => {},
+          complete: (res) => { },
         })
       })
   },
 
-  onRetry(){
+  onRetry() {
     this.setCarList()
   },
 
@@ -70,11 +72,12 @@ Page({
 
   },
 
+  firstTapTab: false,
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.firstTapTab = true
   },
 
   /**
@@ -103,5 +106,18 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  onTabItemTap(item) {
+    // tab 点击时执行
+    if (this.firstTapTab) {
+      this.firstTapTab = false
+    }
+    else{
+      wx.pageScrollTo({
+        complete: (res) => { },
+        scrollTop: 0
+      })
+
+    }
+  },
 })
