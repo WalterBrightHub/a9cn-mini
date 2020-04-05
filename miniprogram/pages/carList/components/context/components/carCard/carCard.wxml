@@ -1,0 +1,10 @@
+<!--pages/carList/components/context/components/carCard/carCard.wxml-->
+<view class="car-card">
+	<view class="full-name">{{carData.fullName}}</view>
+	<view class="stars-and-rank">
+		<view class="stars">
+			<image class="star-icon" wx:for="{{starArray}}" wx:key="value" src="./star.png" />
+		</view>
+    <view class="rank">{{carData.rank}}</view>
+	</view>
+</view>

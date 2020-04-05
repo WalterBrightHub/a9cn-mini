@@ -1,0 +1,53 @@
+/* pages/carList/components/context/components/carCard/carCard.wxss */
+
+.car-card{
+  /* margin-left: 50px; */
+  padding:16px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.full-name{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.stars-and-rank{
+  display: flex;
+  align-items: center;
+}
+
+
+
+.star-icon{
+  /* display: inline-block; */
+  width: 16px;
+  height: 16px;
+}
+
+.rank{
+  margin-left: auto;
+  font-size: 15px;
+  border-radius: 3px;
+  padding:1px;
+  border:1.5px solid #ffc107;
+  color: #ffc107;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media(min-width:720px){
+  .car-card{
+    max-width: 360px;
+  }
+}
