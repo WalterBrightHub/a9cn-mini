@@ -194,3 +194,22 @@
     height: 16px;
   }
 }
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+
+
+  .car-card{
+    background-color: #121212;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .full-name{
+    
+    color: rgba(255, 255, 255, 0.87);
+  }
+  .bp{
+    
+    color: #121212;
+  }
+}

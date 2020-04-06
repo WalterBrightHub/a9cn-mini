@@ -10,6 +10,7 @@
   position: fixed;
   background-color: #f5f7fa;
   width: 100%;
+  max-width: 768px;
   align-items: center;
   /* padding-bottom: 6px; */
   padding-left: 16px;
@@ -72,4 +73,20 @@
 
 
 
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark){
+  .filter{
+    background-color: #000;
+  }
+
+  .filter-item{
+    color: rgba(255, 255, 255, .6);
+  }
+
+  .filter-item.selected{
+    color: rgba(255, 255, 255, .87);
+  }
+  
 }

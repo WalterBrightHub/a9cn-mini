@@ -33,9 +33,9 @@
       },
       {
         "pagePath": "pages/carList/carList",
-        "text": "数据",
-        "iconPath":"images/car-list.png",
-        "selectedIconPath":"images/car-list-selected.png"
+        "text": "车辆",
+        "iconPath":"images/car.png",
+        "selectedIconPath":"images/car-selected.png"
       }
     ]
   }

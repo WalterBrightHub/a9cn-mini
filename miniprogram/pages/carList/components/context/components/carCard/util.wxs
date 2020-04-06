@@ -1,18 +1,18 @@
 //数值转化为宽度百分比
 module.exports.topSpeed=function(value){
-  return (value-200)/3.2
+  return (value-200)*0.32
 }
 
 module.exports.acceleration=function(value){
-  return (value-20)/0.8
+  return (value-35)*1.75
 }
 
 module.exports.handling=function(value){
-  return value/1.1
+  return (value-20)*1.13
 }
 
 module.exports.nitro=function(value){
-  return (value-10)/0.85
+  return (value-15)*1.28
 }
 
 //wxs竟然不支持Array(9)这样的构造函数
