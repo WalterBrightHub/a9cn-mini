@@ -1,0 +1,247 @@
+/* pages/index/components/context/context.wxss */
+
+.context {
+  padding-bottom: 30px;
+}
+
+.a9cn-t1,
+.a9cn-t2 {
+  font-weight: bold;
+  padding-left: 20px;
+  color: #303030;
+}
+
+.a9cn-t1 {
+  font-size: 24px;
+}
+
+.a9cn-t2 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.a9cn-p {
+  font-size: 16px;
+}
+
+.a9cn-card {
+  background-color: white;
+  margin: 20px 20px 0 20px;
+  padding: 10px;
+  /* box-shadow: 0 0 10px #e1e1e1; */
+  border-radius: 10px;
+}
+
+.event-future-title,
+.event-present-title,
+.event-past-title {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+}
+
+.event-future-title {
+  color: #ff0054;
+}
+
+.event-present-title {
+  color: #08a00b;
+}
+
+.event-past-title {
+  color: #009beb;
+}
+
+.event-detail {
+  font-size: 12px;
+  display: flex;
+  color: #606060;
+  /* align-items: center; */
+  margin-top: 4px;
+}
+
+.event-detail-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  /*禁止压缩*/
+}
+
+.event-detail-content {
+  margin-left: 4px;
+  display: flex;
+  line-height: 18px;
+
+  flex-wrap: wrap;
+  /*允许折行*/
+}
+
+.reword-item {
+  display: flex;
+  margin-right: 9px;
+}
+
+
+
+
+
+.empty-contest {
+  color: #909090;
+  margin: 6px 0 0 30px;
+  font-size: 12px;
+}
+
+
+.a9cn-card {
+  animation: show 0.5s;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.reword-bp-uncommon:after,
+.reword-bp-rare:after,
+.reword-bp-epic:after,
+.reword-token:after,
+.reword-credit:after,
+.reword-import-part:after,
+.reword-on-trail:after,
+.reword-kit:after,
+.reword-skin:after {
+  font-weight: bold;
+  font-size: 10px;
+  border: 1px solid;
+  border-radius: 2px;
+  padding: 0 1px;
+  margin-left: 4px;
+
+}
+
+.reword-bp-uncommon:after {
+  content: '图纸';
+  color: #13b4df;
+}
+
+.reword-bp-rare:after {
+  content: '图纸';
+  color: #c14cde;
+}
+
+.reword-bp-epic:after {
+  content: '图纸';
+  color: #f1cd00;
+}
+
+.reword-token:after {
+  content: '蓝币';
+  color: #068ffc;
+}
+
+.reword-credit:after {
+  content: '金币';
+  color: #ffc701;
+}
+
+.reword-import-part:after {
+  content: '金卡';
+  color: #edb900;
+}
+
+.reword-on-trail:after {
+  content: '试用';
+  color: #ff0054;
+}
+
+.reword-kit:after {
+  content: '套件';
+  color: #08a00b;
+}
+
+.reword-skin:after {
+  content: '贴纸';
+  color: #08a00b;
+}
+
+@media(min-width:400px) {
+  .event-past-title,
+  .event-future-title,
+  .event-present-title{
+    font-size: 18px;
+  }
+
+  .empty-contest{
+    font-size: 14px;
+  }
+  .a9cn-t2{
+    font-size: 20px;
+  }
+  .event-detail {
+    font-size: 16px;
+
+  }
+  .event-detail-content{
+    margin-left: 6px;
+  }
+
+  .event-detail-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .reword-bp-uncommon:after,
+  .reword-bp-rare:after,
+  .reword-bp-epic:after,
+  .reword-token:after,
+  .reword-credit:after,
+  .reword-import-part:after,
+  .reword-on-trail:after,
+  .reword-kit:after,
+  .reword-skin:after {
+    font-size: 13px;
+    border: 1px solid;
+    border-radius: 2px;
+    padding: 0 2px;
+    margin-left: 6px;
+
+  }
+}
+
+
+@media(min-width:768px) {
+  .context {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .a9cn-t1,
+  .a9cn-t2 {
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .event-detail {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .empty-contest {
+    color: rgba(255, 255, 255, 0.38);
+  }
+
+  .a9cn-card {
+    background-color: #121212;
+  }
+
+  .event-detail-icon {
+    filter: invert(60%);
+  }
+}

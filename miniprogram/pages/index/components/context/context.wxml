@@ -1,0 +1,81 @@
+<!--pages/index/components/context/context.wxml-->
+
+<view class="context">
+	<view class="event-future-block">
+		<view class="a9cn-t2">即将到来</view>
+		<view wx:if="{{contest_future.length}}">
+			<view wx:for="{{contest_future}}" class="a9cn-card" wx:key="_id">
+				<text class="event-future-title">{{item.contestName}}</text>
+				<view class="event-detail" wx:if="{{item.start_day}}">
+					<image class="event-detail-icon" src="./image/time.png"></image>
+					<text class="event-detail-content">{{item.start_day===item.end_day?item.start_day:(item.start_day+' → '+item.end_day)}}</text>
+				</view>
+				<view class="event-detail" wx:if="{{item.rewords && item.rewords.length}}">
+					<image class="event-detail-icon" src="./image/gift.png"></image>
+					<view class="event-detail-content">
+						<view class="reword-item" wx:for="{{item.rewords}}" wx:key="_id">
+							<text class="reword-text reword-{{item.rewordType}}">{{item.rewordName}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="event-detail" wx:if="{{item.mapName}}">
+					<image class="event-detail-icon" src="./image/map.png"></image>
+					<text class="event-detail-content">{{item.mapName}}</text>
+				</view>
+			</view>
+		</view>
+		<view wx:else class='empty-contest'>暂时没有赛事</view>
+	</view>
+
+	<view class="event-present-block">
+		<view class="a9cn-t2">正在进行</view>
+		<view wx:if="{{contest_present.length}}">
+			<view wx:for="{{contest_present}}" class="a9cn-card" wx:key="_id">
+				<text class="event-present-title">{{item.contestName}}</text>
+				<view class="event-detail" wx:if="{{item.start_day}}">
+					<image class="event-detail-icon" src="./image/time.png"></image>
+					<text class="event-detail-content">{{item.start_day===item.end_day?item.start_day:(item.start_day+' → '+item.end_day)}}</text>
+				</view>
+				<view class="event-detail" wx:if="{{item.rewords && item.rewords.length}}">
+					<image class="event-detail-icon" src="./image/gift.png"></image>
+					<view class="event-detail-content">
+						<view class="reword-item" wx:for="{{item.rewords}}" wx:key="_id">
+							<text class="reword-text reword-{{item.rewordType}}">{{item.rewordName}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="event-detail" wx:if="{{item.mapName}}">
+					<image class="event-detail-icon" src="./image/map.png"></image>
+					<text class="event-detail-content">{{item.mapName}}</text>
+				</view>
+			</view>
+		</view>
+		<view wx:else class='empty-contest'>暂时没有赛事</view>
+	</view>
+
+	<view class="event-past-block">
+		<view class="a9cn-t2">历史活动</view>
+		<view wx:if="{{contest_past.length}}">
+			<view wx:for="{{contest_past}}" class="a9cn-card" wx:key="_id">
+				<text class="event-past-title">{{item.contestName}}</text>
+				<view class="event-detail" wx:if="{{item.start_day}}">
+					<image class="event-detail-icon" src="./image/time.png"></image>
+					<text class="event-detail-content">{{item.start_day===item.end_day?item.start_day:(item.start_day+' → '+item.end_day)}}</text>
+				</view>
+				<view class="event-detail" wx:if="{{item.rewords && item.rewords.length}}">
+					<image class="event-detail-icon" src="./image/gift.png"></image>
+					<view class="event-detail-content">
+						<view class="reword-item" wx:for="{{item.rewords}}" wx:key="_id">
+							<text class="reword-text reword-{{item.rewordType}}">{{item.rewordName}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="event-detail" wx:if="{{item.mapName}}">
+					<image class="event-detail-icon" src="./image/map.png"></image>
+					<text class="event-detail-content">{{item.mapName}}</text>
+				</view>
+			</view>
+		</view>
+		<view wx:else class='empty-contest'>暂时没有赛事</view>
+	</view>
+</view>

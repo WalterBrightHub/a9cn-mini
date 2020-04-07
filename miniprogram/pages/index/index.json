@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "contest-context":"./components/context/context",
+    "request-fail":"../../components/request-fail/request-fail"
+  },
+  "enablePullDownRefresh":true
 }

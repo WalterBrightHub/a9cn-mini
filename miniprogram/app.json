@@ -22,20 +22,20 @@
       {
         "pagePath": "pages/index/index",
         "text": "活动",
-        "iconPath":"images/fire.png",
-        "selectedIconPath":"images/fire-selected.png"
+        "iconPath": "images/fire.png",
+        "selectedIconPath": "images/fire-selected.png"
       },
       {
         "pagePath": "pages/careerMaps/careerMaps",
         "text": "地图",
-        "iconPath":"images/flag.png",
-        "selectedIconPath":"images/flag-selected.png"
+        "iconPath": "images/flag.png",
+        "selectedIconPath": "images/flag-selected.png"
       },
       {
         "pagePath": "pages/carList/carList",
         "text": "车辆",
-        "iconPath":"images/car.png",
-        "selectedIconPath":"images/car-selected.png"
+        "iconPath": "images/car.png",
+        "selectedIconPath": "images/car-selected.png"
       }
     ]
   }
