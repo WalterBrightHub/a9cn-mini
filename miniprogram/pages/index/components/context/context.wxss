@@ -64,6 +64,8 @@
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+  
+  filter: invert(30%);
   /*禁止压缩*/
 }
 
@@ -115,7 +117,11 @@
 .reword-import-part:after,
 .reword-on-trail:after,
 .reword-kit:after,
-.reword-skin:after {
+.reword-skin:after ,
+.reword-voucher:after,
+.reword-purple-coin:after,
+.reword-car-key:after
+{
   font-weight: bold;
   font-size: 10px;
   border: 1px solid;
@@ -170,6 +176,22 @@
   color: #08a00b;
 }
 
+
+.reword-voucher:after{
+  content: '点券';
+  color: #08a00b;
+}
+.reword-purple-coin:after{
+  content: '紫币';
+  color: #af9dff;
+}
+.reword-car-key:after{
+  content: '🔑';
+  /* color: #eba300; */
+  border:none;
+  font-size: 12px;
+}
+
 @media(min-width:400px) {
   .event-past-title,
   .event-future-title,
@@ -204,7 +226,12 @@
   .reword-import-part:after,
   .reword-on-trail:after,
   .reword-kit:after,
-  .reword-skin:after {
+  .reword-skin:after ,
+  
+.reword-voucher:after,
+.reword-purple-coin:after,
+.reword-car-key:after
+  {
     font-size: 13px;
     border: 1px solid;
     border-radius: 2px;

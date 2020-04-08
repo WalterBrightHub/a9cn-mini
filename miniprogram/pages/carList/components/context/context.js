@@ -40,13 +40,6 @@ Component({
     },
   },
   computed:{
-    // carsGroupByClass:data=>({
-    //   D:data.carList.filter(value=>value.carClass==='D'),
-    //   C:data.carList.filter(value=>value.carClass==='C'),
-    //   B:data.carList.filter(value=>value.carClass==='B'),
-    //   A:data.carList.filter(value=>value.carClass==='A'),
-    //   S:data.carList.filter(value=>value.carClass==='S'),
-    // })
     carsGroupByClass:data=>_.groupBy(data.carList,'carClass')
   }
 })

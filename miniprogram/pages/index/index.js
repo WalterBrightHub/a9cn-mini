@@ -1,4 +1,16 @@
 // miniprogram/pages/index/index.js
+
+let myRequest=(option)=>{
+  return new Promise((resolve,reject)=>{
+    wx.request({
+      ...option,
+      success:res=>resolve(res),
+      fail:res=>reject(res)
+    })
+  })
+}
+
+
 Page({
 
   /**
