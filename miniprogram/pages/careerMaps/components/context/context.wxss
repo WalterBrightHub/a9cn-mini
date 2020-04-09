@@ -31,7 +31,7 @@
 .theme {
   margin: 0 0 20px 10px;
   font-size: 18px;
-  color: rgba(255, 0, 84, 0.75);
+  color: #ff0054;
 }
 
 .map-name,
@@ -86,7 +86,7 @@
   }
 
   .theme {
-    color: #ff6196;
+    color: #ff4c88;
   }
 }
 

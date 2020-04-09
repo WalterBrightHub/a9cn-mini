@@ -5,6 +5,7 @@ page {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  --theme-color:#ff0054;
 }
 
 @media (prefers-color-scheme: dark){
