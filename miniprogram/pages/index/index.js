@@ -1,14 +1,5 @@
 // miniprogram/pages/index/index.js
 
-let myRequest=(option)=>{
-  return new Promise((resolve,reject)=>{
-    wx.request({
-      ...option,
-      success:res=>resolve(res),
-      fail:res=>reject(res)
-    })
-  })
-}
 
 
 Page({
@@ -19,38 +10,31 @@ Page({
   data: {
     contestStatus: 'pending',
     contest: [],
-    now:new Date().getTime()
+    now: new Date().getTime()
   },
 
   requestContest() {
-    let that = this
-    wx.request({
+    // let that = this
+    wx.pro.request({
       url: 'https://a9cn.walterbright.cc/api/contest',
-      complete: (res) => {
-        wx.hideLoading({
-          complete: (res) => { },
-        })
-      },
-      fail: (res) => {
-        that.setData({
-          contestStatus: 'reject'
-        })
-      },
       method: 'GET',
-      responseType: '',
-      success: (result) => {
-
-        const { data } = result
-        // console.log(data.status)
-        if (data.status === 200) {
-          // console.log(data.contest)
-          that.setData({
-            contest: data.contest,
-            contestStatus: 'resolve',
-            now:new Date().getTime()
-          })
-        }
-      },
+    }).then(res => {
+      const { data } = res
+      // console.log(data.status)
+      if (data.status === 200) {
+        // console.log(data.contest)
+        this.setData({
+          contest: data.contest,
+          contestStatus: 'resolve',
+          now: new Date().getTime()
+        })
+      }
+    }).catch(res => {
+      that.setData({
+        contestStatus: 'reject'
+      })
+    }).finally(()=>{
+      wx.hideLoading()
     })
   },
 
@@ -105,36 +89,29 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    let that=this
-    wx.request({
+    wx.pro.request({
       url: 'https://a9cn.walterbright.cc/api/contest',
-      complete: (res) => {
-        wx.stopPullDownRefresh({
-          complete: (res) => {},
-        })
-      },
-      fail: (res) => {
-        that.setData({
-          contestStatus: 'reject'
-        })
-      },
       method: 'GET',
-      responseType: '',
-      success: (result) => {
+    }).then(res=>{
+      const { data } = res
+      // console.log(data.status)
+      if (data.status === 200) {
+        // console.log(data.contest)
+        wx.showToast({
+          title: '最新',
+        })
+        this.setData({
+          contest: data.contest,
+          now: new Date().getTime()
+        })
+      }
+    }).catch(res=>{
 
-        const { data } = result
-        // console.log(data.status)
-        if (data.status === 200) {
-          // console.log(data.contest)
-          wx.showToast({
-            title: '最新',
-          })
-          that.setData({
-            contest: data.contest,
-            now:new Date().getTime()
-          })
-        }
-      },
+      this.setData({
+        contestStatus: 'reject'
+      })
+    }).finally(()=>{
+      wx.stopPullDownRefresh()
     })
   },
 
