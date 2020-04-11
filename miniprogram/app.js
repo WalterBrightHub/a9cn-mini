@@ -1,12 +1,16 @@
 //app.js
 
 import './lib/promise-polyfill/index'
+import { promisifyAll } from './lib/wx-promise-pro/index'
 
 //iOS基础库上的Promise不支持finally，用pollyfill修复，
 //https://www.cnblogs.com/ljybill/p/10097852.html
 
 global.Promise && (Promise=global.Promise)
 
+//API Promise化，https://github.com/youngjuning/wx-promise-pro
+
+promisifyAll()
 
 
 
