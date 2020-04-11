@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/careerMaps/careerMaps",
-    "pages/carList/carList"
+    "pages/carList/carList",
+    "pages/user/user"
   ],
   "window": {
     "backgroundColor": "#f5f7fa",
@@ -36,6 +37,12 @@
         "text": "车辆",
         "iconPath": "images/car.png",
         "selectedIconPath": "images/car-selected.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "用户",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user-selected.png"
       }
     ]
   }
