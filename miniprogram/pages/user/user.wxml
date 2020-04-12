@@ -46,6 +46,9 @@
 						<switch color="#ff0054" checked="{{props.store.darkMode}}" bindchange="switchDarkModeChange" />
 					</view>
 				</view>
+				<view class="context-item-body">
+					<view>未完全适配，并且可能带来不好的体验……</view>
+				</view>
 			</view>
 
 		</view>
