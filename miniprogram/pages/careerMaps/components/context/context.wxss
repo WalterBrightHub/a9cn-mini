@@ -11,16 +11,16 @@
 /* color */
 .car-class,
 .map-name {
-  color: #303030;
+  color: var(--text-title-color);
 }
 
 .place {
-  color: #606060;
+  color: var(--text-p-color);
 }
 
 .theme-block {
   padding: 15px;
-  background-color: #fff;
+  background-color: var(--card-bg-color);
 }
 
 .theme-block+.theme-block {
@@ -31,7 +31,7 @@
 .theme {
   margin: 0 0 20px 10px;
   font-size: 18px;
-  color: #ff0054;
+  color: var(--theme-color);
 }
 
 .map-name,
@@ -69,21 +69,21 @@
 /* dark mode */
 
 .context.dark .theme-block {
-  background-color: #1e1e1e;
+  background-color: var(--card-bg-color-dark);
   min-height: 200px;
 }
 
 .context.dark .car-class,
 .context.dark .map-name {
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-title-color-dark);
 }
 
 .context.dark .place {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-p-color-dark);
 }
 
 .context.dark .theme {
-  color: #ff4c88;
+  color: var(--theme-color-dark);
 }
 
 
