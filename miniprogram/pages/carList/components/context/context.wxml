@@ -1,5 +1,5 @@
 <!--pages/carList/components/context/context.wxml-->
-<view class="context">
+<view class="context {{darkMode?'dark':''}}">
 	<view class="filter">
 		<view class="filter-item {{selectedCarClass===item?'selected':''}}" wx:for="{{['D','C','B','A','S']}}" wx:key="item" data-car-class="{{item}}" bindtap="onSwitchCarClass">{{item}}</view>
 	</view>
@@ -7,7 +7,7 @@
 	<view class="car-card-list">
 		<view class="car-card" wx:for="{{carsGroupByClass[selectedCarClass]}}" wx:key="_id">
 
-			<car-card carData="{{item}}" />
+			<car-card darkMode="{{darkMode}}" carData="{{item}}" />
 		</view>
 	</view>
 </view>

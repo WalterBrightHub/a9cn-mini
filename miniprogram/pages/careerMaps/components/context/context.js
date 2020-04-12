@@ -8,6 +8,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    darkMode:{
+      type:Boolean,
+      value:false
+    },
     careerMaps:{
       type:Object,
       value:{careerMaps:{}}

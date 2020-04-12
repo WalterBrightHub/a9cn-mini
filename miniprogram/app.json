@@ -13,7 +13,6 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2",
   "resizable": true,
   "tabBar": {
     "color": "#000000",
@@ -40,7 +39,7 @@
       },
       {
         "pagePath": "pages/user/user",
-        "text": "用户",
+        "text": "我的",
         "iconPath": "images/user.png",
         "selectedIconPath": "images/user-selected.png"
       }

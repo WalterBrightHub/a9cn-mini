@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "contest-context":"./components/context/context",
-    "request-fail":"../../components/request-fail/request-fail"
+    "request-fail":"../../components/request-fail/request-fail",
+    "tab-bar":"/custom-tab-bar/index"
   },
   "enablePullDownRefresh":true
 }

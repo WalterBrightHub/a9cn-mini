@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "request-fail": "../../components/request-fail/request-fail",
-    "career-maps-context":"./components/context/context"
+    "career-maps-context":"./components/context/context",
+    "tab-bar":"/custom-tab-bar/index"
   }
 }

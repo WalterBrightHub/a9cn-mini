@@ -1,16 +1,98 @@
 <!--miniprogram/pages/user/user.wxml-->
-<view class="container">
-  <!-- 用户 openid -->
-  <view class="userinfo">
-    <button 
-      open-type="getUserInfo" 
-      bindgetuserinfo="onGetUserInfo"
-      class="userinfo-avatar"
-      style="background-image: url({{avatarUrl}})"
-      size="default"
-    ></button>
-    <view class="userinfo-nickname-wrapper">
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
-    </view>
-  </view>
+<page-meta
+  background-text-style="{{props.store.darkMode?'light':'dark'}}"
+  background-color="{{props.store.darkMode?'#121212':'#f5f5f5'}}"
+  background-color-top="{{props.store.darkMode?'#121212':'#f5f5f5'}}"
+  background-color-bottom="{{props.store.darkMode?'#121212':'#f5f5f5'}}"
+  page-style="background-color: {{props.store.darkMode?'#121212':'#f5f5f5'}}"
+>
+  <navigation-bar
+    front-color="{{props.store.darkMode?'#e0e0e0':'#303030'}}"
+    background-color="{{props.store.darkMode?'#121212':'#f5f5f5'}}"
+    color-animation-duration="250"
+  />
+</page-meta>
+<view class="container {{props.store.darkMode?'dark':''}}">
+	<!-- 我的 -->
+	<view class="context user">
+		<view class="context-header">我的</view>
+		<view class="context-body">
+			<view class="context-item">
+				<view class="context-item-header">
+					<view class="sub-title">用户id</view>
+					<view class="right-item">#314159</view>
+				</view>
+			</view>
+
+			<view class="context-item-divider" />
+			<view class="context-item">
+				<view class="context-item-header">
+					<view class="sub-title">后台</view>
+					<image src="./right-arrow.png" class="right-arrow"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 设置 -->
+
+	<view class="context setting">
+		<view class="context-header">设置</view>
+		<view class="context-body">
+			<view class="context-item">
+				<view class="context-item-header">
+					<view class="sub-title">深色模式</view>
+					<view class="right-item">
+						<switch color="#ff0054" checked="{{props.store.darkMode}}" bindchange="switchDarkModeChange" />
+					</view>
+				</view>
+			</view>
+
+		</view>
+	</view>
+
+
+	<view class="context wxmini">
+		<view class="context-header">关于小程序</view>
+		<view class="context-body">
+			<view class="context-item">
+				<view class="context-item-header">
+					<view class="sub-title">版本</view>
+					<view class="right-item">{{wxmini_version}}</view>
+				</view>
+			</view>
+
+			<view class="context-item-divider" />
+			<view class="context-item" bindtap="onCopyQQGroup">
+				<view class="context-item-header">
+					<view class="sub-title">QQ交流群</view>
+					<view class="right-item">{{qqGroup}}</view>
+				</view>
+				<view class="context-item-body">
+					<view>点击复制群号</view>
+				</view>
+			</view>
+
+			<view class="context-item-divider" />
+			<view class="context-item">
+				<view class="context-item-header">
+					<view class="sub-title">开发组</view>
+				</view>
+				<view class="context-item-body">
+					<view>水明@收藏家</view>
+					<view>Doogle@萌星</view>
+				</view>
+			</view>
+
+			<view class="context-item-divider" />
+			<view class="context-item">
+				<view class="context-item-header">
+					<view class="sub-title">致谢</view>
+				</view>
+				<view class="context-item-body">
+					<view>国际服车辆数据由 硫化镉@收藏家 提供。</view>
+				</view>
+			</view>
+		</view>
+	</view>
 </view>

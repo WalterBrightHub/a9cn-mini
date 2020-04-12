@@ -1,4 +1,16 @@
 <!--miniprogram/pages/index/index.wxml-->
+<page-meta
+  background-text-style="{{props.store.darkMode?'light':'dark'}}"
+  background-color="{{props.store.darkMode?'#121212':'#f5f5f5'}}"
+  background-color-top="{{props.store.darkMode?'#121212':'#f5f5f5'}}"
+  background-color-bottom="{{props.store.darkMode?'#121212':'#f5f5f5'}}"
+  page-style="background-color: {{props.store.darkMode?'#121212':'#f5f5f5'}}"
+>
+  <navigation-bar
+    front-color="{{props.store.darkMode?'#e0e0e0':'#303030'}}"
+    background-color="{{props.store.darkMode?'#121212':'#f5f5f5'}}"
+  />
+</page-meta>
 <view class="contain">
 	<view wx:if="{{contestStatus==='pending'}}">
 	</view>
@@ -6,6 +18,7 @@
 		<request-fail bind:onRetry="onRetry"/>
 	</view>
 	<view wx:elif="{{contestStatus==='resolve'}}">
-		<contest-context contest="{{contest}}" now="{{now}}" />
+		<contest-context darkMode="{{props.store.darkMode}}" contest="{{contest}}" now="{{now}}" />
 	</view>
+	<weui-tabbar  style="position:fixed;bottom:0;width:100%;left:0;right:0;" />
 </view>

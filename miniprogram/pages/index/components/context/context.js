@@ -17,6 +17,10 @@ Component({
     now: {
       type: Date,
       value: new Date().getTime()
+    },
+    darkMode:{
+      type:Boolean,
+      value:false
     }
   },
 

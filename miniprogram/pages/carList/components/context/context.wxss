@@ -1,11 +1,11 @@
 /* pages/carList/components/context/context.wxss */
 
-.context{
+.context {
   padding-bottom: 30px;
-  margin:0 auto
+  margin: 0 auto
 }
 
-.filter{
+.filter {
   display: flex;
   position: fixed;
   background-color: #f5f7fa;
@@ -16,56 +16,58 @@
   padding-left: 16px;
 }
 
-.filter,.filter-placeholder{
+.filter,
+.filter-placeholder {
   height: 50px;
 }
 
-.filter-item{
+.filter-item {
   padding: 0 10px 10px 10px;
   font-size: 16px;
   color: #909090;
   width: 36px;
   text-align: center;
-  
+
   transition: all 0.5s
 }
 
-.filter-item.selected{
+.filter-item.selected {
   font-size: 30px;
   font-weight: bold;
   color: #303030;
   transition: all 0.5s
 }
 
-.car-card{
+.car-card {
   margin-left: 20px;
   margin-right: 20px;
 }
 
-.car-card+.car-card{
+.car-card+.car-card {
   margin-top: 20px;
 }
 
-@media(min-width:480px){
-  .car-card{
+@media(min-width:480px) {
+  .car-card {
     max-width: 480px;
   }
 }
 
-@media(min-width:768px){
-  .car-card-list{
+@media(min-width:768px) {
+  .car-card-list {
     display: flex;
     flex-wrap: wrap;
     /* justify-content: center; */
   }
-  .car-card{
-    flex:1 1 340px;
+
+  .car-card {
+    flex: 1 1 340px;
     margin: 20px 0px 0 0px;
     padding: 0 10px;
     max-width: 354px;
   }
 
-  .context{
+  .context {
     padding-left: 10px;
     padding-right: 10px;
     max-width: 768px;
@@ -76,17 +78,14 @@
 }
 
 /* dark mode */
-@media (prefers-color-scheme: dark){
-  .filter{
-    background-color: #000;
-  }
+.context.dark .filter {
+  background-color: #121212;
+}
 
-  .filter-item{
-    color: rgba(255, 255, 255, .6);
-  }
+.context.dark .filter-item {
+  color: rgba(255, 255, 255, .6);
+}
 
-  .filter-item.selected{
-    color: rgba(255, 255, 255, .87);
-  }
-  
+.context.dark .filter-item.selected {
+  color: rgba(255, 255, 255, .87);
 }

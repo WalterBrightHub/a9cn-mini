@@ -1,6 +1,6 @@
 <!--pages/index/components/context/context.wxml-->
 
-<view class="context">
+<view class="context {{darkMode?'dark':''}}">
 	<view class="event-future-block">
 		<view class="a9cn-t2">即将到来</view>
 		<view wx:if="{{contest_future.length}}">

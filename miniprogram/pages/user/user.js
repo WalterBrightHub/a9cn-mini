@@ -1,5 +1,17 @@
 // miniprogram/pages/user/user.js
-Page({
+
+import store from '../../stores/index'
+import { observer } from 'wechat-weapp-mobx/observer'
+
+
+const appInstance = getApp()
+const { globalData } = appInstance
+
+
+Page(observer({
+  props: {
+    store
+  },
 
   /**
    * 页面的初始数据
@@ -10,7 +22,29 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    wxmini_version: globalData.wxmini_version,
+    qqGroup: '1041602955',
+    darkModeChecked: store.darkMode,
+  },
+
+  onCopyQQGroup() {
+    wx.setClipboardData({
+      data: this.data.qqGroup,
+    })
+  },
+
+  switchDarkModeChange(event) {
+    let darkModeChecked = event.detail.value
+    this.setData({ darkModeChecked })
+    // console.log(darkModeChecked)
+
+    store.darkMode = darkModeChecked
+    
+    wx.setStorage({
+      data: darkModeChecked,
+      key: 'darkMode',
+    })
   },
 
   /**
@@ -32,6 +66,12 @@ Page({
    */
   onShow: function () {
 
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 3
+      })
+    }
   },
 
   /**
@@ -68,4 +108,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+}))

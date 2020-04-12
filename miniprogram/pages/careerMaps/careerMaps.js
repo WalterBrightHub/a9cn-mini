@@ -1,7 +1,12 @@
 // miniprogram/pages/careerMaps/careerMaps.js
 
+import store from '../../stores/index'
+import { observer } from 'wechat-weapp-mobx/observer'
 
-Page({
+Page(observer({
+  props:{
+    store
+  },
   /**
    * 页面的初始数据
    */
@@ -75,6 +80,12 @@ Page({
    */
   onShow: function () {
 
+    if (typeof this.getTabBar === 'function' &&
+    this.getTabBar()) {
+    this.getTabBar().setData({
+      selected: 1
+    })
+  }
   },
 
   firstTapTab: false,
@@ -155,4 +166,4 @@ Page({
     }
   },
 
-})
+}))

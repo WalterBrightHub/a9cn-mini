@@ -1,7 +1,12 @@
 // miniprogram/pages/carList/carList.js
 
+import store from '../../stores/index'
+import { observer } from 'wechat-weapp-mobx/observer'
 
-Page({
+Page(observer({
+  props: {
+    store
+  },
 
   /**
    * 页面的初始数据
@@ -69,7 +74,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 2
+      })
+    }
   },
 
   firstTapTab: false,
@@ -112,7 +122,7 @@ Page({
     if (this.firstTapTab) {
       this.firstTapTab = false
     }
-    else{
+    else {
       wx.pageScrollTo({
         complete: (res) => { },
         scrollTop: 0
@@ -120,4 +130,4 @@ Page({
 
     }
   },
-})
+}))

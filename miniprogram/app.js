@@ -3,6 +3,12 @@
 import './lib/promise-polyfill/index'
 import { promisifyAll } from './lib/wx-promise-pro/index'
 
+import config from './config/index'
+
+//store
+
+import store from './stores/index'
+
 //iOS基础库上的Promise不支持finally，用pollyfill修复，
 //https://www.cnblogs.com/ljybill/p/10097852.html
 
@@ -26,10 +32,28 @@ App({
         //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
         //   如不填则使用默认环境（第一个创建的环境）
         // env: 'dev-okxhf',
+        env:config.cloud_env,
         traceUser: true,
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      wxmini_version:config.wxmini_version
+    }
+
+    wx.pro.getStorage({
+      key: 'darkMode',
+    }).then(res=>{
+      console.log(res)
+      store.darkMode=res.data
+    }).catch(res=>{
+      console.log(res)
+      wx.pro.setStorage({
+        data: false,
+        key: 'darkMode',
+      })
+      store.darkMode=false
+    })
+
   }
 })

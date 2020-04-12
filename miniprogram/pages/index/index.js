@@ -1,8 +1,13 @@
 // miniprogram/pages/index/index.js
 
+import store from '../../stores/index'
+import { observer } from 'wechat-weapp-mobx/observer'
 
 
-Page({
+Page(observer({
+  props: {
+    store
+  },
 
   /**
    * 页面的初始数据
@@ -10,7 +15,7 @@ Page({
   data: {
     contestStatus: 'pending',
     contest: [],
-    now: new Date().getTime()
+    now: new Date().getTime(),
   },
 
   requestContest() {
@@ -33,7 +38,7 @@ Page({
       that.setData({
         contestStatus: 'reject'
       })
-    }).finally(()=>{
+    }).finally(() => {
       wx.hideLoading()
     })
   },
@@ -49,6 +54,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        darkMode: store.darkMode
+      })
+    }
+
     wx.showLoading({
       title: '加载中',
     })
@@ -68,6 +81,12 @@ Page({
    */
   onShow: function () {
 
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0
+      })
+    }
   },
 
   firstTapTab: false,
@@ -92,7 +111,7 @@ Page({
     wx.pro.request({
       url: 'https://a9cn.walterbright.cc/api/contest',
       method: 'GET',
-    }).then(res=>{
+    }).then(res => {
       const { data } = res
       // console.log(data.status)
       if (data.status === 200) {
@@ -105,12 +124,12 @@ Page({
           now: new Date().getTime()
         })
       }
-    }).catch(res=>{
+    }).catch(res => {
 
       this.setData({
         contestStatus: 'reject'
       })
-    }).finally(()=>{
+    }).finally(() => {
       wx.stopPullDownRefresh()
     })
   },
@@ -141,4 +160,4 @@ Page({
 
     }
   },
-})
+}))

@@ -15,6 +15,10 @@ Component({
     carList:{
       type:Array,
       value:[]
+    },
+    darkMode:{
+      type:Boolean,
+      value:false
     }
   },
 

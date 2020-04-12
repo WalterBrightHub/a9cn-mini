@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "request-fail": "../../components/request-fail/request-fail",
-    "car-list-context":"./components/context/context"
+    "car-list-context":"./components/context/context",
+    "tab-bar":"/custom-tab-bar/index"
   }
 }

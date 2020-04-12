@@ -67,27 +67,23 @@
 }
 
 /* dark mode */
-/* iOS已经支持，安卓还没有 */
-@media (prefers-color-scheme: dark) {
 
+.context.dark .theme-block {
+  background-color: #1e1e1e;
+  min-height: 200px;
+}
 
-  .theme-block {
-    background-color: #121212;
-    min-height: 200px;
-  }
+.context.dark .car-class,
+.context.dark .map-name {
+  color: rgba(255, 255, 255, 0.87);
+}
 
-  .car-class,
-  .map-name {
-    color: rgba(255, 255, 255, 0.87);
-  }
+.context.dark .place {
+  color: rgba(255, 255, 255, 0.6);
+}
 
-  .place {
-    color: rgba(255, 255, 255, 0.6);
-  }
-
-  .theme {
-    color: #ff4c88;
-  }
+.context.dark .theme {
+  color: #ff4c88;
 }
 
 

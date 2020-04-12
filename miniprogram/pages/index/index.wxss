@@ -1,8 +1,1 @@
 /* miniprogram/pages/index/index.wxss */
-
-navigator{
-  font-size: 24px;
-  color:#0084ff;
-  background-color: #fff;
-  padding: 10px;
-}

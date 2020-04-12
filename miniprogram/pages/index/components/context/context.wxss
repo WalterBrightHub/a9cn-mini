@@ -64,7 +64,7 @@
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  
+
   filter: invert(30%);
   /*禁止压缩*/
 }
@@ -109,23 +109,11 @@
 }
 
 
-.reword-bp-uncommon:after,
-.reword-bp-rare:after,
-.reword-bp-epic:after,
-.reword-token:after,
-.reword-credit:after,
-.reword-import-part:after,
-.reword-on-trail:after,
-.reword-kit:after,
-.reword-skin:after ,
-.reword-voucher:after,
-.reword-purple-coin:after,
-.reword-car-key:after
-{
+.reword-text:after {
   font-weight: bold;
-  font-size: 10px;
-  border: 1px solid;
-  border-radius: 2px;
+  font-size: 12px;
+  /* border: 1px solid; */
+  /* border-radius: 2px; */
   padding: 0 1px;
   margin-left: 4px;
 
@@ -177,39 +165,45 @@
 }
 
 
-.reword-voucher:after{
+.reword-voucher:after {
   content: '点券';
   color: #08a00b;
 }
-.reword-purple-coin:after{
+
+.reword-purple-coin:after {
   content: '紫币';
   color: #af9dff;
 }
-.reword-car-key:after{
+
+.reword-car-key:after {
   content: '🔑';
   /* color: #eba300; */
-  border:none;
+  border: 0px;
   font-size: 12px;
 }
 
 @media(min-width:400px) {
+
   .event-past-title,
   .event-future-title,
-  .event-present-title{
+  .event-present-title {
     font-size: 18px;
   }
 
-  .empty-contest{
+  .empty-contest {
     font-size: 14px;
   }
-  .a9cn-t2{
+
+  .a9cn-t2 {
     font-size: 20px;
   }
+
   .event-detail {
     font-size: 16px;
 
   }
-  .event-detail-content{
+
+  .event-detail-content {
     margin-left: 6px;
   }
 
@@ -218,25 +212,10 @@
     height: 20px;
   }
 
-  .reword-bp-uncommon:after,
-  .reword-bp-rare:after,
-  .reword-bp-epic:after,
-  .reword-token:after,
-  .reword-credit:after,
-  .reword-import-part:after,
-  .reword-on-trail:after,
-  .reword-kit:after,
-  .reword-skin:after ,
-  
-.reword-voucher:after,
-.reword-purple-coin:after,
-.reword-car-key:after
-  {
-    font-size: 13px;
-    border: 1px solid;
-    border-radius: 2px;
+  .reword-text:after {
+    font-size: 16px;
     padding: 0 2px;
-    margin-left: 6px;
+    margin-left: 3px;
 
   }
 }
@@ -249,26 +228,23 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+.context.dark .a9cn-t1,
+.context.dark .a9cn-t2 {
+  color: rgba(255, 255, 255, 0.87);
+}
 
-  .a9cn-t1,
-  .a9cn-t2 {
-    color: rgba(255, 255, 255, 0.87);
-  }
+.context.dark .event-detail {
+  color: rgba(255, 255, 255, 0.6);
+}
 
-  .event-detail {
-    color: rgba(255, 255, 255, 0.6);
-  }
+.context.dark .empty-contest {
+  color: rgba(255, 255, 255, 0.38);
+}
 
-  .empty-contest {
-    color: rgba(255, 255, 255, 0.38);
-  }
+.context.dark .a9cn-card {
+  background-color: #1e1e1e;
+}
 
-  .a9cn-card {
-    background-color: #121212;
-  }
-
-  .event-detail-icon {
-    filter: invert(60%);
-  }
+.context.dark .event-detail-icon {
+  filter: invert(60%);
 }

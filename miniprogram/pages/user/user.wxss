@@ -1,1 +1,104 @@
 /* miniprogram/pages/user/user.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  transition: all 0.5s;
+}
+
+.container.dark{
+  background-color: #121212;
+  transition: all 0.5s;
+}
+
+.context{
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.5s;
+}
+
+.container.dark .context{
+  background-color: #1e1e1e;
+  transition: all 0.5s;
+}
+
+.context-header{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #303030;
+  transition: all 0.5s;
+}
+
+.container.dark .context-header{
+  color: #e0e0e0;
+  transition: all 0.5s;
+}
+
+.context-body{
+  font-size: 16px;
+  color: #606060;
+  transition: all 0.5s;
+}
+
+.container.dark .context-body{
+  color: #a0a0a0;
+  transition: all 0.5s;
+}
+
+.context-item-header{
+  display: flex;
+  align-items: center;
+  
+}
+
+.right-item{
+  margin-left: auto;
+}
+
+.right-arrow{
+  margin-left: auto;
+  width: 16px;
+  height: 16px;
+  filter: invert(0.6);
+}
+
+.context-item{
+  padding: 10px 0;
+}
+
+.context-item-divider{
+  height: 1px;
+  background-color: #f0f0f0;
+  transition: all 0.5s;
+}
+
+.container.dark .context-item-divider{
+  background-color: #171717;
+  transition: all 0.5s;
+}
+
+.context-item-header+.context-item-body{
+  margin-top: 5px;
+}
+
+.context-item-body{
+  font-size: 12px;
+  /* padding: 0 10px; */
+}
+
+.sub-title{
+  color: #303030;
+  transition: all 0.5s;
+}
+
+.container.dark .sub-title{
+  color: #e0e0e0;
+  transition: all 0.5s;
+}
