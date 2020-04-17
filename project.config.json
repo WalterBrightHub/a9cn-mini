@@ -28,6 +28,7 @@
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"qqappid": "wx742bd28d4723c3d9",
 	"condition": {
 		"search": {
 			"current": -1,

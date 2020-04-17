@@ -80,7 +80,7 @@
 }
 
 .container.dark .context-item-divider{
-  background-color: #171717;
+  background-color: var(--divider-color-dark);
   transition: all 0.5s;
 }
 

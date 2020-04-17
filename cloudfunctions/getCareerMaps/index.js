@@ -9,6 +9,7 @@ cloud.init({
 const db = cloud.database()
 exports.main = async (event, context) => {
   //云函数限制一次最多获取100条数据
-  const res=await db.collection('careerMaps').get()
+  const tableName='careerMaps'
+  const res=await db.collection(tableName).get()
   return groupBy(res.data,'theme')
 }
